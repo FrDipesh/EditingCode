@@ -53,11 +53,14 @@ public class  EditingCode {
                 //Rec holds what the reader finds on the line
                 String rec = "";
                 int totalCharacter = 0;
+                int wordCount = 0;
+                String totalSpaces = "";
 
                 //Moving through file, reading, and printing each line of the selected file
                 while (reader.ready()) {
                     rec = reader.readLine();
                     totalCharacter += rec.length();
+
                     line++;
                     //Prints the line # and the contents of the line
                     System.out.printf("\nLine%4d: %-60s ", line, rec);
@@ -65,7 +68,11 @@ public class  EditingCode {
                 }
                 reader.close(); // must close the file to seal it and clear buffer
                 System.out.println("\n\nData file read!"); //Success message
-                System.out.println("There are " + totalCharacter + " characters in the file.");
+                System.out.println("\nFile Summary");
+                System.out.println("Number of Lines: " + line);
+                System.out.println("Number of Words: " + wordCount);
+                System.out.println("Number of Spaces: " + totalSpaces);
+                System.out.println("Number of Characters: " + totalCharacter);
 
                  /*
                     This is where the program stops displaying the read file to the user
